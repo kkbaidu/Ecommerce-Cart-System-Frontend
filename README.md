@@ -29,6 +29,21 @@ When a user first visits the site, a unique user ID is automatically generated a
 ```sh
 git clone https://github.com/kkbaidu/Ecommerce-Cart-System-Frontend.git
 cd Ecommerce-Cart-System-Frontend
+```
+
+### 2️⃣ Install Dependencies
+```sh
 npm install
+```
+
+### 3️⃣ Set Up Environment Variables  
+Create a **`.env`** file in the root directory and configure the following:
+```sh
+MONGODB_URI=apiURL
+```
+
+### 4️⃣ Run the Server
+```sh
 npm run start
+// The react app will start on **`http://localhost:3000`**.
 ```
