@@ -19,7 +19,7 @@ export default function Cart() {
 
   return (
     <div className="p-5">
-      <h1 className="text-2xl font-bold mb-4">Shopping Cart</h1>
+      <h1 className="mb-4 text-2xl font-bold">Shopping Cart</h1>
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
@@ -27,13 +27,13 @@ export default function Cart() {
           {cart.map((item) => (
             <li
               key={item.name}
-              className="border p-3 rounded-md shadow flex items-center gap-4"
+              className="flex items-center gap-4 rounded-md border p-3 shadow"
             >
               {/* Product Image */}
               <img
                 src={item.image}
                 alt={item.name}
-                className="w-20 h-20 object-cover rounded"
+                className="h-20 w-20 rounded object-cover"
               />
 
               <div className="flex-1">
@@ -41,13 +41,13 @@ export default function Cart() {
                 <p className="text-gray-500">Quantity: {item.quantity}</p>
                 <div className="mt-2">
                   <button
-                    className="bg-green-500 text-white px-2 rounded mx-1"
+                    className="mx-1 rounded bg-green-500 px-2 text-white"
                     onClick={() => updateQuantity(item.name, item.quantity + 1)}
                   >
                     +
                   </button>
                   <button
-                    className="bg-yellow-500 text-white px-2 rounded mx-1"
+                    className="mx-1 rounded bg-yellow-500 px-2 text-white"
                     onClick={() =>
                       updateQuantity(item.name, Math.max(1, item.quantity - 1))
                     }
@@ -59,7 +59,7 @@ export default function Cart() {
 
               {/* Remove Button */}
               <button
-                className="bg-red-500 text-white px-3 py-1 rounded"
+                className="rounded bg-red-500 px-3 py-1 text-white"
                 onClick={() => removeFromCart(item.name)}
               >
                 Remove
@@ -73,7 +73,7 @@ export default function Cart() {
       {cart.length > 0 && (
         <div className="mt-4 flex items-center">
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="rounded bg-blue-500 px-4 py-2 text-white"
             onClick={saveCart}
           >
             Save Cart

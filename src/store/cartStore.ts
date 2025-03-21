@@ -49,7 +49,7 @@ export const useCartStore = create<CartState>((set, get) => ({
 
       if (existingItem) {
         updatedCart = state.cart.map((i) =>
-          i.name === item.name ? { ...i, quantity: i.quantity + 1 } : i
+          i.name === item.name ? { ...i, quantity: i.quantity + 1 } : i,
         );
       } else {
         updatedCart = [...state.cart, { ...item, quantity: 1 }];
@@ -64,7 +64,7 @@ export const useCartStore = create<CartState>((set, get) => ({
   updateQuantity: (name, quantity) =>
     set((state) => {
       const updatedCart = state.cart.map((item) =>
-        item.name === name ? { ...item, quantity } : item
+        item.name === name ? { ...item, quantity } : item,
       );
 
       // Save to session

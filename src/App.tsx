@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <Router>
-      <nav className="p-4 bg-gray-800 text-white flex justify-between items-center">
+      <nav className="flex items-center justify-between bg-gray-800 p-4 text-white">
         <Link to="/" className="text-lg">
           🛒 E-Commerce Cart System
         </Link>
@@ -24,7 +24,7 @@ export default function App() {
           </Link>
           <Link to="/cart" className="relative">
             Cart{" "}
-            <span className="bg-white rounded-full text-black text-[10px] px-2 py-1">
+            <span className="rounded-full bg-white px-2 py-1 text-[10px] text-black">
               {totalItems}
             </span>
           </Link>
@@ -32,7 +32,7 @@ export default function App() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="text-white md:hidden"
           onClick={() => setSidebarOpen(true)}
         >
           <Menu size={24} />
@@ -41,26 +41,26 @@ export default function App() {
 
       {/* Sidebar for Mobile */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-gray-900 text-white transform ${
+        className={`fixed left-0 top-0 h-full w-64 transform bg-gray-900 text-white ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 md:hidden`}
       >
-        <div className="p-5 flex justify-between">
+        <div className="flex justify-between p-5">
           <h2 className="text-lg font-bold">Menu</h2>
           <button onClick={() => setSidebarOpen(false)}>
             <X size={24} />
           </button>
         </div>
         <ul className="mt-4">
-          <li className="p-3 border-b">
+          <li className="border-b p-3">
             <Link to="/" onClick={() => setSidebarOpen(false)}>
               Products
             </Link>
           </li>
-          <li className="p-3 border-b">
+          <li className="border-b p-3">
             <Link to="/cart" onClick={() => setSidebarOpen(false)}>
               Cart{" "}
-              <span className="bg-white rounded-full text-black text-[10px] px-2 py-1">
+              <span className="rounded-full bg-white px-2 py-1 text-[10px] text-black">
                 {totalItems}
               </span>
             </Link>
